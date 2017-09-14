@@ -262,6 +262,7 @@ public class ConnsPOC extends BaseTest {
 		String productPriceCartPage = null;
 		String expectedSuccessMessage = checkoutFlowCommonLocators[33][4];
 		try {
+			webPage.getDriver().get("http://connsecommdev-1365538477.us-east-1.elb.amazonaws.com/uat/");
 			webPage.getDriver().manage().window().maximize();
 			String[][] pickupAvialableProduct = ExcelUtil.readExcelData(
 					DataFilePath, "ProductPurchase",
