@@ -148,8 +148,6 @@ webConfig:
     name: Chrome
     version: 56.0
     driverLocation: ..\\test-automation-library\\resources\\chromedriver.exe
-    width: 320
-    height: 480
    platform:
     name: Windows
     version: 10
