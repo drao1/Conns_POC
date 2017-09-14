@@ -100,7 +100,7 @@ tfsConfig:
  maxReconections: 3
 
 testngConfig:
- suiteListener: com.etouch.conns.listener.SuiteListener
+ suiteListener: com.etouch.conns.listener.TestNGCustomReportListener
  testListener: com.etouch.conns.listener.TestListener
  testngClass:
  reporter: com.etouch.report.TestNGReporter
