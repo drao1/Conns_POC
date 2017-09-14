@@ -1,0 +1,311 @@
+#Note: When the changes are made for this devConfig.yml, Please remember to copy changes to testConfig.yml as well
+testTypes: [Web]
+
+## Execution flow for TestBeds / Test Suites / Test Cases
+kdConfig:
+ execute: false
+ filePath: '..\\Conns_POC\\src\\test\\resources\\testdata\\excel\\conns_automation_data.xls'
+
+ #Parallel- All Combination
+ parallelMode: testbeds
+
+ #parallel-Test Beds
+ #parallelMode: testbeds
+
+ #parallel-Test Suites
+ #parallelMode: testsuites
+
+ #parallel-Test Cases
+ #parallelMode: testcases
+
+xlsDataConfig:
+  'testData': '..\\Conns_POC\\ConnsTestData\\Input\\Env\\conns_automation_data.xls'
+  'stageData': '..\\Conns_POC\\src\\test\\resources\\testdata\\excel\\conns_automation_data.xls'
+
+defectManagementTool: Jira
+
+#Jira Config
+
+jiraConfig:
+ username: rpandey
+ password:
+  encrypted: ZVRvdWNoMTIzJCQ==
+ url: https://etouch.atlassian.net/
+ key:  SPLET
+ projectName: SplunkETouch
+ environment: QA
+ screenshotAttachment: false
+ videoAttachment: false
+
+#Rally config
+rallyConfig:
+ projectId: 34867036301
+ workspaceId: 34866816045
+ defectOwner: 16693935729
+ build: 1.0
+ username: rpandey@etouch.net
+ password:
+  encrypted: UmFsbHkxMjMh$$
+ url: https://rally1.rallydev.com
+ rallyApp: EBayPOC
+ screenshotAttachment: false
+ videoAttachment: false
+
+defectConfig:
+ defectTool: Jira
+ projectId: 20974459868
+ workspaceId: 16693935735
+ defectOwner: 16693935729
+ build: 1.0
+ username: rpandey@etouch.net
+ password:
+  encrypted: UmFsbHkxMjMh
+ url3: https://etouch.atlassian.net/
+ issueUrl: https://etouch.atlassian.net/rest/api/2/issue
+ keys:  ETAAPIHS
+
+# Video configuration setting
+videoConfig:
+ videoPath: src/test/resources/testdata/videos
+ videoFileName: ScreenRecording
+ copyToServer: yes
+ serverName: Tomcat
+ deploymentPath: C:\Sudarshan\Softwares\win\apache-tomcat-7.0.47\webapps\ROOT\AutomationVideos
+ baseVideoLink: http://localhost:8080/AutomationVideos
+ baseScreenshotPath: src/test/resources/testdata/screenshots
+ screenshotFileName: error
+
+wsConfig:
+ wsType: Rest
+ wsAuthConfig:
+  authType: Bearer
+  authURI: http://10.218.136.144/api/v1/login/splunk?username=tsawant&password=TEja28sa
+  authMethod: POST
+  authKey: data.token
+  inputDataType:
+  inputData:
+
+
+
+tfsConfig:
+ collectionURL: http://tfs-na.ihs.com:8080/tfs/NA_Energy_Collection
+ userName: IHS\ULD49133
+ password:
+  encrypted: ZVRvdWNoMTIzNA==
+ projectName: srcold2
+ mappingServerPath: $/Pangaea/Main/Apps/Navigate/SQA/Etouchtfstest/srcold2
+ mappingLocalPath: C:\Users\QB07129167-eTouch\Desktop\MyTFS3\downloadproject3
+ jniNativeBaseDir: ms_tfs_redist/native
+ workspaceName: tfsWorkspace9
+ maxReconections: 3
+
+testngConfig:
+ suiteListener: com.etouch.conns.listener.SuiteListener
+ testListener: com.etouch.conns.listener.TestListener
+ testngClass:
+ reporter: com.etouch.report.TestNGReporter
+ parallelMode: tests
+ groupName:
+
+webConfig:
+ hub: localhost
+ port: 4001
+ URL: http://www.conns.com/
+ tool: Selenium
+ seleniumServerPath: ..\\test-automation-library\\resources\\selenium-server-standalone-2.48.2.jar
+ testEnv: local
+ testngClass:
+ - className: com.etouch.connsTests.Conns_Home_Page
+   methodList: []
+ - className: com.etouch.connsTests.Conns_Store_Locator_Page
+   methodList: []
+ currentTestBeds: [Chrome]
+#currentTestBeds: [Firefox,InternetExplorer,Chrome,Safari]
+ testBeds:
+ #FireFox TestBed
+ - testBedName: Firefox
+   browser:
+    name: fireFox
+    version: 49
+    driverLocation:
+   platform:
+    name: Windows
+    version: 10
+    
+ #IE11 TestBed
+ - testBedName: InternetExplorer
+   browser:
+    name: IE
+    version: 11.0
+    driverLocation: ..\\test-automation-library\\resources\\IEDriverServer.exe
+   platform:
+    name: Windows
+    version: 11
+    
+ #Chrome TestBed
+ - testBedName: Chrome
+   browser:
+    name: Chrome
+    version: 56.0
+    driverLocation: ..\\test-automation-library\\resources\\chromedriver.exe
+   platform:
+    name: Windows
+    version: 10
+
+#Safari TestBed
+ - testBedName: Safari
+   browser:
+    name: Safari
+    version: 9.1
+    driverLocation:
+   platform:
+    name: OS X
+    version: El Capitan
+
+
+mobileConfig:
+ hub: 127.0.0.1
+ port: 4001
+ tool: Appium
+ testEnv: local
+ testngClass:
+ - className: com.etouch.connsTests.TestConnsHomePage
+   methodList: [verifyLinksAboveHeader]
+ currentTestBeds: [AndroidMotoG]
+ #currentTestBeds: [iPhoneNative,iPadNative,Android1, Android,AndroidNative,AndroidHybrid]
+ 
+
+ appiumConfig:
+  nodePath: C:/Appium/node.exe
+  appiumJSPath: C:/Appium/node_modules/appium/bin/appium.js
+
+
+ testBeds:
+ #ios TestBeds
+ - testBedName: iPhoneNative
+   port: 4733
+   device:
+    name: iPhone 5
+    udid: bc412d86b5a7656be47777594090468fad156071
+   browser:
+    name: iPhone5
+    version: 
+    driverLocation: /Users/eTouch
+   platform:
+    name: iOS
+    version: 7.1.2
+   app:
+    #appPath: /Users/eTouch/Library/Developer/Xcode/DerivedData/ideation-evvzdvaovpasljdhlrdgimxuhndo/Build/Products/Debug-iphoneos/ideation.app
+    bundleId: com.apple.samplecode.MapSearch
+
+   #ios TestBeds
+ - testBedName: iPadNative
+   port: 4773
+   device:
+    name: iPad 4th
+    udid: b260151b7058491bd4dcd99396da691f045c1bbc
+   browser:
+    name: iPhone
+    version: 
+    driverLocation: /Users/eTouch
+   platform:
+    name: iOS
+    version: 7.1.1
+   app:
+    #appPath: /Users/eTouch/Library/Developer/Xcode/DerivedData/ideation-evvzdvaovpasljdhlrdgimxuhndo/Build/Products/Debug-iphoneos/ideation.app
+    bundleId: com.apple.samplecode.MapSearch
+
+ #ios TestBeds
+ - testBedName: AndroidMotoG
+   port: 4733
+   device:
+    name: Moto G
+    type: device
+    udid: ce12160c8418570504
+   browser:
+    name: Chrome
+    version: 58.0.3029.83
+    driverLocation: /Users/eTouch
+   platform:
+    name: ANDROID
+    version: 6.0.1
+   app:
+    appPath:
+    appPackage: com.android.chrome
+    appActivity: com.google.android.apps.chrome.Main
+ 
+ #ios TestBeds
+ - testBedName: Android12
+   port: 4733
+   device:
+    name: Google Nexus 7
+    type: device
+    udid: ce12160c8418570504
+   browser:
+    name: Chrome
+    version: 52.0.2743.98
+    driverLocation: /Users/eTouch
+   platform:
+    name: ANDROID
+    version: 4.1
+   app:
+    appPath:
+    appPackage: com.android.chrome
+    appActivity: com.google.android.apps.chrome.Main
+
+ #ios TestBeds
+ - testBedName: Android1
+   port: 4773
+   device:
+    name: Moto G
+    type: device
+    udid: ZX1D63FG7C
+   browser:
+    name: chrome
+    version: 52.0.2743.98
+    driverLocation: /Users/eTouch
+   platform:
+    name: ANDROID
+    version: 6.0
+   app:
+    appPath:
+    appPackage: com.android.chrome
+    appActivity: com.google.android.apps.chrome.Main
+
+ #ios TestBeds
+ - testBedName: AndroidHybrid
+   port: 4753
+   device:
+    name: Karbonn
+    type: device
+    udid: LS1437839535
+   browser:
+    name: chrome
+    version: 52.0.2743.98
+    driverLocation: /Users/eTouch
+   platform:
+    name: ANDROID
+    version: 5.1
+   app:
+    appPath:
+    appPackage: com.android.chrome
+    appActivity: com.google.android.apps.chrome.Main
+
+ #ios TestBeds
+ - testBedName: AndroidNative
+   port: 4753
+   device:
+    name: LG
+    type: device
+    udid: LGH818115e4ff6
+   browser:
+    name: chrome
+    version: 52.0.2743.98
+    driverLocation: /Users/eTouch
+   platform:
+    name: ANDROID
+    version: 5.1
+   app:
+    appPath:
+    appPackage: com.android.chrome
+    appActivity: com.google.android.apps.chrome.Main
