@@ -1,0 +1,11 @@
+<h1>Failed Test Cases </h1>
+<hr><br>
+<table>
+	<tr>
+		<th>Test Suite Name</th>
+		<th>Test Case Name</th>
+		<th>Browser</th>
+		<th>Error details</th>
+	</tr>
+	#failTestCaseLists
+</table>

@@ -1,0 +1,5 @@
+Img1.png is an image of type com.itextpdf.text.ImgRaw
+Img2.png is an image of type com.itextpdf.text.ImgRaw
+Img3.png is an image of type com.itextpdf.text.ImgRaw
+Img4.png is an image of type com.itextpdf.text.ImgRaw
+

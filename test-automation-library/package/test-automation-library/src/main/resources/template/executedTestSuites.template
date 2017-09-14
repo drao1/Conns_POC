@@ -1,0 +1,5 @@
+<label>#suiteName</label>
+<table>
+	#executedTestCasesSuites
+</table>
+<br>

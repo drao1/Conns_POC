@@ -1,0 +1,7 @@
+<tr>
+	<td style="text-align:center">#testSuiteName</td>
+	<td style="text-align:center">#totalTestCases</td>
+	<td style="text-align:center">#executedTestCaseCount</td>
+	<td style="text-align:center">#excludedTestCaseCount</td>
+	#browserSummary
+</tr>

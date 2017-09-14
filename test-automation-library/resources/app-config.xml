@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+
+	<!-- <bean id="jmxAdapter" class="org.springframework.jmx.export.MBeanExporter"> -->
+	<!-- <property name="beans"> -->
+	<!-- <map> -->
+	<!-- <entry key="bean:name=testBean1"> -->
+	<!-- <ref local="testBean"/> -->
+	<!-- </entry> -->
+	<!-- </map> -->
+	<!-- </property> -->
+	<!-- </bean> -->
+
+	<!-- <bean id="testBean" class="org.springframework.jmx.JmxTestBean"> -->
+	<!-- <property name="name"> -->
+	<!-- <value>TEST -->
+	<!-- </property> -->
+	<!-- <property name="age"> -->
+	<!-- <value>100 -->
+	<!-- </property> -->
+	<!-- </bean> -->
+
+
+<!--   <bean id="testBedTypes" class="com.etouch.taf.core.resources.TestBedType"> -->
+<!--         <property name="testBedName" value="TestBedName">		 -->
+<!--             <util:constant id="FIREFOX" static-field="Firefox"/> -->
+<!--             <util:constant id="INTERNETEXPLORER" static-field="InternetExplorer"/> -->
+<!--             <util:constant id="CHROME" static-field="Chrome"/> -->
+<!--             <util:constant id="SAFARI" static-field="Safari"/> -->
+<!--             <util:constant id="IPHONENATIVESIM" static-field="iPhoneNativeSim"/> -->
+<!--             <util:constant id="IPADNATIVESIM" static-field="iPadNativeSim"/> -->
+<!--             <util:constant id="IPHONEWEBSIM" static-field="iPhoneWebSim"/> -->
+<!--             <util:constant id="IPADWEBSIM" static-field="iPadWebSim"/> -->
+<!--             <util:constant id="IPHONENATIVE" static-field="iPhoneNative"/> -->
+<!--             <util:constant id="IPADNATIVE" static-field="iPadNative"/> -->
+<!--             <util:constant id="IPHONEWEB" static-field="iPhoneWeb"/> -->
+<!--             <util:constant id="IPADWEB" static-field="iPadWeb"/> -->
+<!--             <util:constant id="IOS" static-field="iOS"/> -->
+<!--             <util:constant id="ANDROIDNATIVE" static-field="AndroidNative"/> -->
+<!--             <util:constant id="ANDROIDWEBEM" static-field="AndroidWebEm"/> -->
+<!--             <util:constant id="ANDROID" static-field="Android"/> -->
+            
+<!--             <util:constant id="ANDROIDBROWSER" static-field="AndroidBrowser"/> -->
+<!--             <util:constant id="ANDROIDCHROME" static-field="AndroidChrome"/> -->
+<!--             <util:constant id="ANDROIDHYBRIDAPP" static-field="AndroidHybridApp"/> -->
+<!--             <util:constant id="ANDROID1" static-field="Android1"/> -->
+<!--             <util:constant id="IPADSIMULATOR" static-field="iPadSimulator"/> -->
+            
+<!--         </property> -->
+<!--     </bean> -->
+
+<bean id="testBedType" class="com.etouch.taf.core.resources.TestBedType" factory-method="valueOf" lazy-init="false">
+ 	<constructor-arg value="firefox" />
+</bean>
+
+
+<bean id="keyword" class="com.etouch.taf.kd.config.KeywordLibrary" factory-method="valueOf" lazy-init="false">
+ 	<constructor-arg value="hasValue" />
+</bean>
+
+
+</beans>

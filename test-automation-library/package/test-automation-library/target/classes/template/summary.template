@@ -1,0 +1,24 @@
+<h1>Summary</h1>
+<hr>
+<table>
+	<tr>
+		<td>Test Suite Name</td>
+		<td colspan="8">
+			<table>
+				<tr>
+					<td colspan="3" style="text-align:center">Test Cases Count</td>
+					#browserHeaderName
+				</tr>
+				<tr>
+					<td style="width: 58px; text-align:center;">Total</td>
+					<td style="width: 62px; text-align:center;">Executed</td>
+					<td style="width: 60px; text-align:center;">Excluded</td>
+					#browserSummary
+				</tr>
+			</table>
+		</td>
+	</tr>
+	
+	#testSuiteSummary
+
+</table>

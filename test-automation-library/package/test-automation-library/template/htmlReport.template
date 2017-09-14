@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>TestNG Custom Report</title>
+
+<link type="text/css" href="testng-reports.css" rel="stylesheet">
+<script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+
+<style>
+body {
+	margin-left: 120px;
+	margin-right: 300px;
+}
+
+.header {
+	
+}
+
+.main-container {
+	
+}
+
+.left-container-top {
+	
+}
+
+.left-container-bottom {
+	
+}
+
+.right-container {
+	
+}
+
+#executed {
+	
+}
+
+#skipped {
+	
+}
+
+#summary {
+	
+}
+
+#detail-report {
+	
+}
+
+table,th,td {
+	border: 1px solid #000;
+  	border-collapse: collapse;
+}
+
+table tr:first-child td{
+    background: aliceblue;
+}
+</style>
+
+<script>
+	
+	
+	</script>
+
+
+</head>
+
+<body>
+	<div class="header">
+		<h2>Test Results</h2>
+		<h3>File: #fileName</h3>
+		<h3>Execution style: Parallel - #executionStyle</h3>
+		<hr>
+		<hr>
+	</div>
+
+	<div class="main-container">
+		<div class="left-container-top" style="display: none">
+			<ul>
+				<li>Executed</li>
+				<li>Skipped</li>
+				<li>Summary</li>
+			</ul>
+		</div>
+		<div class="left-container-bottom" style="display: none">
+			<ul>
+				<li><ul>#browser
+					</ul></li>
+			</ul>
+		</div>
+		<div class="right-container">
+			<div id="executed">
+				<div id="executedSuites">
+					<h1>Executed Test Cases</h1>
+					<hr>
+					#executedTestSuites
+				</div>
+
+			</div>
+
+			<div id="skipped">
+				<div id="skippedSuites">
+					<h1>Excluded Test Cases</h1>
+					<hr>
+					#skippedTestCases
+				</div>
+			</div>
+
+			<div id="detail-report">
+				#failTestCaseDetails
+				<br>
+			</div>
+			
+			<div id="summary" style="display: block;">
+				#summary
+				<br>
+			</div>
+			
+		</div>
+	</div>
+
+</body>
+</html>

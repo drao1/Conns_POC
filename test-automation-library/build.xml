@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<project name="test-automation-library" default="package">
+
+	<target name="package">
+		<echo>Packaging test-automation-library</echo>
+		<jar destfile="./package/test-automation-library.jar" basedir="./target/classes"
+			includes="**/**" excludes="**/*.java *.project *.classpath *.gitignore* *.jar"
+			update="yes">
+
+			<fileset dir="." includes="**/**"
+				excludes="**/*.java *.project *.classpath *.gitignore* **/package/*.jar **/org.eclipse.* **/package/package.bat" />
+
+		</jar>
+	</target>
+	<target name="gen">
+		<echo>Generate the HTML report from JUnit XML files</echo>
+		<property name="genReportDir" location="./target/surefire-reports/unitTestReports" />
+		<delete dir="${genReportDir}" />
+		<mkdir dir="${genReportDir}" />
+		<junitreport todir="./target/surefire-reports/unitTestReports">
+			<fileset dir="./target/surefire-reports">
+				<include name="**/TEST-*.xml" />
+			</fileset>
+			<report format="frames" todir="${genReportDir}/html" />
+		</junitreport>
+	</target>
+
+
+</project>

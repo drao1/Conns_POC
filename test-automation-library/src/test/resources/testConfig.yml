@@ -1,0 +1,357 @@
+#Note: When the changes are made for this devConfig.yml, Please remember to copy changes to testConfig.yml as well
+testTypes: [Mobile]
+
+## Execution flow for TestBeds / Test Suites / Test Cases
+kdConfig:
+ execute: true
+ filePath: '../AmazonPOC/src/test/resources/testdata/SplunkKeyword_sequential_execution.xlsx'
+ 
+ #Parallel- All Combination
+ parallelMode: false
+ 
+ #parallel-Test Beds
+ #parallelMode: testbeds
+ 
+ #parallel-Test Suites
+ #parallelMode: testsuites
+ 
+ #parallel-Test Cases
+ #parallelMode: testcases
+
+xlsDataConfig:
+  'testData': '/Users/eTouch/eTaapGit/test-automation-version1/AmazonPOC/src/test/resources/testdata/cisco.xls'
+  'stageData': '/Users/eTouch/eTaapGit/test-automation-version1/AmazonPOC/src/test/resources/testdata/cisco-stage.xls'
+  
+defectManagementTool: Jira
+
+#Jira Config
+
+jiraConfig:
+ username: rpandey
+ password: 
+  encrypted: ZVRvdWNoMTIzJCQ==
+ url: https://etouch.atlassian.net/
+ key:  SPLET 
+ projectName: SplunkETouch
+ environment: QA
+ screenshotAttachment: true
+ videoAttachment: false
+ 
+#Rally config
+rallyConfig:
+ projectId: 34867036301
+ workspaceId: 34866816045 
+ defectOwner: 16693935729
+ build: 1.0 
+ username: rpandey@etouch.net
+ password: 
+  encrypted:  UmFsbHkxMjMh
+ url: https://rally1.rallydev.com
+ rallyApp: EBayPOC
+ screenshotAttachment: true
+ videoAttachment: false
+  
+defectConfig:
+ defectTool: Jira
+ projectId: 20974459868
+ workspaceId: 16693935735
+ defectOwner: 16693935729
+ build: 1.0 
+ username: rpandey@etouch.net
+ password: 
+  encrypted: UmFsbHkxMjMh
+ url3: https://etouch.atlassian.net/
+ issueUrl: https://etouch.atlassian.net/rest/api/2/issue
+ keys:  ETAAPIHS 
+ 
+# Video configuration setting
+videoConfig:
+ videoPath: src/test/resources/testdata/videos
+ videoFileName: ScreenRecording
+ copyToServer: yes
+ serverName: Tomcat
+ deploymentPath: C:\Sudarshan\Softwares\win\apache-tomcat-7.0.47\webapps\ROOT\AutomationVideos
+ baseVideoLink: http://localhost:8080/AutomationVideos
+ baseScreenshotPath: src/test/resources/testdata/screenshots
+ screenshotFileName: error
+ 
+wsConfig:
+ wsType: Rest
+ wsAuthConfig:
+  authType: Bearer
+  authURI: http://10.218.136.144/api/v1/login/splunk?username=tsawant&password=TEja28sa
+  authMethod: POST
+  authKey: data.token
+  inputDataType: 
+  inputData: 
+
+ 
+ 
+tfsConfig:
+ collectionURL: http://tfs-na.ihs.com:8080/tfs/NA_Energy_Collection
+ userName: IHS\ULD49133
+ password: 
+  encrypted: ZVRvdWNoMTIzNA==
+ projectName: srcold2
+ mappingServerPath: $/Pangaea/Main/Apps/Navigate/SQA/Etouchtfstest/srcold2
+ mappingLocalPath: C:\Users\QB07129167-eTouch\Desktop\MyTFS3\downloadproject3
+ jniNativeBaseDir: ms_tfs_redist/native
+ workspaceName: tfsWorkspace9
+ maxReconections: 3
+ 
+testngConfig:
+ suiteListener: com.etouch.amazon.listener.SuiteListener
+ testListener: com.etouch.amazon.listener.TestListener
+ testngClass:
+ reporter: com.etouch.report.TestNGReporter
+ parallelMode: tests
+ groupName:
+
+webConfig:
+ hub: localhost
+ port: 4001
+ URL: http://www.splunk.com
+ tool: Selenium
+ seleniumServerPath: \\resources\\selenium-server-standalone-2.48.2.jar
+ testEnv: local 
+ testngClass:
+ - className: com.etouch.amazon.pages.test.web.TestAmazonMainPage
+   methodList: [testSignInWithITafElement]
+ currentTestBeds: [Firefox]
+
+ testBeds:
+ #FireFox TestBed
+ - testBedName: Firefox
+   browser:
+    name: fireFox
+    version: 25
+    driverLocation: 
+   platform: 
+    name: Windows
+    version: 7
+ #IE10 TestBed
+ - testBedName: InternetExplorer
+   browser:
+    name: InternetExplorer
+    version: 11
+    driverLocation: \\resources\\IEDriverServer.exe
+   platform: 
+    name: Windows
+    version: 7
+ #Chrome TestBed
+ - testBedName: Chrome
+   browser:
+    name: Chrome
+    version: 43
+    driverLocation: 
+   platform: 
+    name: Windows
+    version: 7
+    
+    #Chrome TestBed
+ - testBedName: Chrome1
+   browser:
+    name: Chrome1
+    version: 35
+    driverLocation: ..\\test-automation-library\\resources\\chromedriver
+   platform: 
+    name: Mac
+    version: 8
+ #Safari TestBed
+ - testBedName: Safari
+   browser:
+    name: Safari
+    version: 2.28.0
+   platform: 
+    name: Windows
+    version: 7
+
+ 
+mobileConfig:
+ hub: localhost
+ port: 4001
+ tool: Appium
+ testEnv: local
+ testngClass:
+ - className: com.etouch.mobile.ebay.Test_Youtube_latest
+   methodList: []
+ currentTestBeds: [AndroidMotoG, AndroidMicromax, AndroidLenovo]
+ #currentTestBeds: [Android, AndroidNative]
+
+  
+ appiumConfig:
+  nodePath: C:/Appium/node.exe
+  appiumJSPath: C:/Appium/node_modules/appium/bin/appium.js
+  #macNodePath: /Applications/Appium.app/Contents/Resources/node/bin/node
+  #macAppiumJSPath: /Applications/Appium.app/Contents/Resources/node_modules/appium/bin/appium.js
+ 
+ testBeds:
+  #ios TestBeds
+ - testBedName: iPadSimulator
+   port: 4723
+   device:
+    name: iPad
+    type: Simulator
+   browser:
+    name: iPad
+    version: 7.1
+    driverLocation: /Users/eTouch
+   platform: 
+    name: iOS
+   app:
+    appPath: /Users/eTouch/Library/Developer/Xcode/DerivedData/MapSearch-fbxnltrbywbliyddutolsypcrxtj/Build/Products/Debug-iphonesimulator/MapSearch.app	 
+    bundleId: com.apple.samplecode.MapSearch
+
+  #Android TestBeds
+ - testBedName: iPhoneNativeSim
+   port: 4770
+   device:
+    name: eTouch_device
+    udid: 9673388ef1cbdbb6adf1d7e319f9abf69eb3c4c4
+   browser:
+    name: iPad
+    version: 7.1
+    driverLocation: /Users/eTouh 
+   platform: 
+    name: iOS
+   app:
+    #appPath: /Users/eTouch/Library/Developer/Xcode/DerivedData/MapSearch-fbxnltrbywbliyddutolsypcrxtj/Build/Products/Debug-iphonesimulator/MapSearch.app	 
+    bundleId: com.apple.samplecode.MapSearch
+    
+   #ios TestBeds
+ - testBedName: iPhoneNative
+   port: 4773
+   device:
+    name: iPhone
+    udid: b260151b7058491bd4dcd99396da691f045c1bbc
+   browser:
+    #name: iPhoneNative
+    version: 7.1.1
+    driverLocation: /Users/eTouch
+   platform: 
+    name: iOS
+   app:
+    #appPath: /Users/eTouch/Library/Developer/Xcode/DerivedData/ideation-evvzdvaovpasljdhlrdgimxuhndo/Build/Products/Debug-iphoneos/ideation.app	 
+    bundleId: com.apple.samplecode.MapSearch
+
+ #ios TestBeds
+ - testBedName: AndroidMotoG
+   port: 4733					
+   device:
+    name: Moto G
+    type: device
+    udid: ZX1D63FG7C
+   browser:
+    #name: Chrome
+    version: 42.0.2
+    driverLocation: /Users/eTouch
+   platform: 
+    name: ANDROID
+    version: 6.0
+   app:
+    appPath: 
+    appPackage: com.android.settings 
+    appActivity: com.android.settings.Settings
+    
+ - testBedName: AndroidMicromax
+   port: 4753
+   device:
+    name: Micromax AQ4501    
+    type: device
+    udid: V00776141140509337    
+   browser:
+    #name: Firefox	
+    version: 38
+    driverLocation: /Users/eTouch
+   platform: 
+    name: Android
+    version: 5.1
+   app:
+    appPackage: com.android.settings 
+    appActivity: com.android.settings.Settings
+
+ - testBedName: AndroidLenovo
+   port: 4753
+   device:
+    name: Lenovo A6000    
+    type: device
+    udid: 74a15031    
+   browser:
+    #name: Firefox	
+    version: 38
+    driverLocation: /Users/eTouch
+   platform: 
+    name: Android
+    version: 5.0
+   app:
+    appPackage: com.android.settings 
+    appActivity: com.android.settings.Settings
+    
+ - testBedName: AndroidHybridApp
+   port: 4743
+   device:
+    name: Galaxy Tab A    
+    type: device
+    udid: 604123590a687f09    
+   browser:
+    #name: Firefox	
+    version: 38
+    driverLocation: /Users/eTouch
+   platform: 
+    name: Android
+    version: 5.0.2
+   app:
+    appPackage: com.ebay.mobile
+    appActivity: com.ebay.mobile.activities.eBay
+    
+ - testBedName: Android
+   port: 4763
+   device:
+    name: Lenova A600    
+    type: device
+    udid: 74a15031    
+   browser:
+    #name: Firefox	
+    version: 38
+    driverLocation: /Users/eTouch
+   platform: 
+    name: Android
+    version: 4.4.4
+   app:
+    appPackage: com.google.android.youtube
+    appActivity: com.google.android.youtube.HomeActivity
+    
+ - testBedName: Android3
+   port: 4727
+   device:
+    name: EmulatorTest2    
+    type: device
+    udid: emulator-5554 
+    #emulator-5554
+   browser:
+    name: Firefox	
+    version: 4.4.2
+    driverLocation: /Users/eTouch
+   platform: 
+    name: Android
+    version: 4.4.2
+   app:
+    appPackage: com.experitest.ExperiBank
+    appActivity: com.experitest.ExperiBank.LoginActivity
+    
+ 
+ - testBedName: iPadNative
+   port: 4780
+   device:
+    name: iPad
+    udid: 33399d5ab4d538526e42dc77db0b964904d4728a
+   browser:
+    name: iPadNative
+    version: 7.1.2
+    driverLocation: /Users/eTouch
+   platform: 
+    name: iOS
+   app:
+    #appPath: /Users/eTouch/Library/Developer/Xcode/DerivedData/ideation-evvzdvaovpasljdhlrdgimxuhndo/Build/Products/Debug-iphoneos/ideation.app	 
+    bundleId: com.apple.samplecode.MapSearch
+    

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>TestNG Custom Report</title>
+
+<link type="text/css" href="testng-reports.css" rel="stylesheet">
+<script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+
+<style>
+body {
+	margin-left: 120px;
+	margin-right: 300px;
+}
+
+.header {
+	
+}
+
+.main-container {
+	
+}
+
+.left-container-top {
+	
+}
+
+.left-container-bottom {
+	
+}
+
+.right-container {
+	
+}
+
+#executed {
+	
+}
+
+#skipped {
+	
+}
+
+#summary {
+	
+}
+
+#detail-report {
+	
+}
+
+#errorMessage{
+
+}
+
+table,th,td {
+	border: 1px solid #000;
+  	border-collapse: collapse;
+}
+
+table tr:first-child td{
+    background: aliceblue;
+}
+</style>
+
+<script>
+	
+	
+	</script>
+
+
+</head>
+
+<body>
+	<div class="header">
+		<h2>Test Results</h2>
+		<h3>File: #fileName</h3>
+		<h3>Execution style: Parallel - #executionStyle</h3>
+		<hr>
+		<hr>
+	</div>
+
+	<div class="main-container">
+		<div class="right-container">
+            <div id="errorMessages">
+                <div id="errorMessage">
+                     <h2>Excel Error Messages</h1>
+                     <hr>
+                     <ol>
+                       #errorMessageList
+                      </ol> 
+                </div>
+             </div> 
+		</div>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+JUnitTestCase -> src/test
+                     1. intializa - read devConfig.yml => TestBedConfigManager.
+
+                     2. ExecuteTestNG
+
+                     3. testNG.run()
+
+SuiteListener -
+
+onStart
+   1. set current testbed to TestBedManager.
+   2. create Driver.
+   3.set driver to testBed.
+  

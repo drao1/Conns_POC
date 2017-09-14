@@ -1,0 +1,6 @@
+<tr>
+	<td>#testSuiteName</td>
+	<td>#testCaseName</td>
+	<td>#browser</td>
+	<td>#errorDetails</td>
+</tr>

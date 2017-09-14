@@ -1,0 +1,17 @@
+/target/
+/target/*
+/logs/
+/logs/*
+/test-output/
+/test-output/*
+
+*.class
+*.classpath
+
+
+# Package Files #
+*.jar
+*.war
+*.ear
+/jxl.log
+/bin
