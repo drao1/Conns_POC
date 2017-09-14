@@ -62,7 +62,7 @@ public class ConnsPOC extends BaseTest {
 	String[][] checkoutFlowCommonLocators;
 	String testType, browserName;
 	ConnsProductPurchasePage connsProductPurchasePage;
-	String testUrl = "http://connsecommdev-1365538477.us-east-1.elb.amazonaws.com/conns_rwd";
+	String testUrl = "http://connsecommdev-1365538477.us-east-1.elb.amazonaws.com/uat";
 	// String testUrl = "http://www.conns.com/";
 	String[][] frenchDoor;
 	String[][] mobileMenuData;
