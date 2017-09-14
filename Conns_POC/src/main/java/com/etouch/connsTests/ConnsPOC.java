@@ -184,7 +184,7 @@ public class ConnsPOC extends BaseTest {
 	 * 
 	 * @throws Exception
 	 */
-	@Test(priority = 7, enabled = true, description = "verify Error Msg With Blank Data")
+	@Test(priority = 7, enabled = true, description = "verify Error Msg With Invalid Data")
 	public void verifyFieldValidationErrorMessageWithInValidData()
 			throws Exception {
 		SoftAssert softAssert = new SoftAssert();
