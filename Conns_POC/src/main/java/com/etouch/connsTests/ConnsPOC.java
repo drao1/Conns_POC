@@ -54,7 +54,7 @@ public class ConnsPOC extends BaseTest {
 	static Log log = LogUtil.getLog(ConnsPOC.class);
 	static String AbsolutePath= TafExecutor.class.getProtectionDomain().getCodeSource().getLocation().getPath();
 	static String  videoLocation = AbsolutePath.substring(0,AbsolutePath.indexOf("/target/classes/")).substring(1).concat("/src/test/resources/testdata/videos");
-	Logger logger = Logger.getLogger(TestConnsCreditAppPage_old.class.getName());
+	Logger logger = Logger.getLogger(ConnsPOC.class.getName());
 	protected static String url;
 	protected static WebPage webPage;
 	private ConnsMainPage mainPage;
